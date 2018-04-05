@@ -24,6 +24,11 @@
 /vendor\
 %{nil}
 
+# Add user to media_rw for access to android_storage
+%define additional_post_scripts \
+/usr/bin/groupadd-user media_rw || :\
+%{nil}
+
 %include rpm/dhd/droid-hal-device.inc
 
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %
