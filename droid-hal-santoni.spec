@@ -24,6 +24,11 @@
 /vendor\
 %{nil}
 
+# Fixes WebBrowser crashes
+%define android_config \
+#define WANT_ADRENO_QUIRKS 1 \
+%{nil}
+
 # Add user to media_rw for access to android_storage
 %define additional_post_scripts \
 /usr/bin/groupadd-user media_rw || :\
